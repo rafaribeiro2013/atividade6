@@ -1,0 +1,28 @@
+body {
+  background-color: #c9c9c9;
+}
+
+.titulo_legal {
+  font-family: 'Poppins', sans-serif;
+  color: #f10909;
+  text-align: center;
+}
+
+.titulo_maneiro {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+p, li, b, i, a {
+  font-family: 'Sono', sans-serif;
+}
+
+.tabela {
+  font-family: 'Rubik', sans-serif;
+}
+
+.alinhar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

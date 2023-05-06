@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Atividade 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    
+    {% load static %}
+    <link type="text/css" href="{% static 'appdoribeiro/css/style.css' %}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 class="titulo_legal">Rafael Chaves Bayão Ribeiro</h1>
+    <h1 class="titulo_maneiro">Botafogo</h1>
+    <br>
+    <img width="300px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Botafogo_de_Futebol_e_Regatas_logo.svg/1200px-Botafogo_de_Futebol_e_Regatas_logo.svg.png" class="alinhar">
+    <p>Botafogo de Futebol e Regatas é uma instituição poliesportiva brasileira, fundada no Rio de Janeiro em 1904, após a fusão do Club de Regatas Botafogo(fundada para o esporte "remo") com o <i>Botafogo Football Club</i>. Esse clube é considerado por muitos como o <b>maior</b> time de futebol da história do Brasil, grupo no qual eu me incluo, visto que temos ídolos não só do clube, mas do Brasil, como Garrincha, Nilton Santos e Jairzinho.</p>
+    
+    <b>Lista de títulos relevantes do Botafogo</b>
+    <ul>
+      <li>Campeonato Brasileiro 1995</li>
+      <li>Campeonato Brasileiro 1968</li>
+      <li>Copa CONMEBOL 1993</li>
+    </ul>
+
+    <a href="https://pt.wikipedia.org/wiki/Botafogo_de_Futebol_e_Regatas#Principais_t%C3%ADtulos" target="_blank" >Acesse os títulos do Botafogo</a>
+    <br>
+    
+    <p><i >Meu TOP3 <u>pessoal</u> de jogadores na história do Botafogo</i></p>
+    <ol>
+      <li>Garrincha</li>
+      <li>Jairzinho</li>
+      <li>Rodrigo Pimpão <b>(meme)</b></li>
+    </ol>
+    <p>Agora, uma tabela com alguns dos escudos da história do Botafogo:</p>
+    <table border="1">
+      <thead>
+      <tr>
+        <th width="100px" class="tabela">Ano</th>
+        <th class="tabela">Escudo</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr align="center">
+        <td class="tabela">1894</td>
+        <td><img width="100" src="https://www.botafogo.com.br/assets/images/simbolos/sbl_01.jpg"></td>
+      </tr>
+      <tr align="center">
+        <td class="tabela">1904</td>
+        <td><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/BotafogoFC1904.jpg"></td>
+      </tr>
+      <tr align="center">
+        <td class="tabela">1942</td>
+        <td><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Botafogo_de_Futebol_e_Regatas_logo.svg/1200px-Botafogo_de_Futebol_e_Regatas_logo.svg.png"></td>
+      </tr>
+      </tbody>
+    </table>
+    <p><b>Jogadores inseridos pelo usuário:</b></p>
+    <ul>
+      {% for jogador in jogadores %}
+        <li>{{ jogador.nome }} || {{ jogador.data_de_nascimento }} || {{ jogador.posicao }} || {{ jogador.jogou_no_botafogo }}
+        <a href='/jogadores/edit/{{jogador.id}}'>Editar</a>
+        <a href='/jogadores/delete/{{jogador.id}}'>Remover</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p><b>Técnicos inseridos pelo usuário:</b></p>
+    <ol>
+      {% for tecnico in tecnicos %}
+        <li>{{ tecnico.nome }} || {{ tecnico.data_de_nascimento }} || {{ tecnico.tempo_de_trabalho_no_botafogo }} || {{ tecnico.ganhou_titulos }}
+        <a href='/tecnicos/edit/{{tecnico.id}}'>Editar</a>
+        <a href='/tecnicos/delete/{{tecnico.id}}'>Remover</a>
+        </li>
+      {% endfor %}
+    </ol>
+  </body>
+</html>

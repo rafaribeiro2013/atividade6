@@ -1,0 +1,20 @@
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Nome</label>
+    <input type="text" name="nome" value="{{ tecnico.nome }}"> 
+  </div>
+  <div>
+    <label>Data de Nascimento</label>
+    <input type="date" name="data" value="{{  tecnico.data_de_nascimento }}">
+  </div>
+  <div>
+    <label>Tempo de trabalho no Botafogo</label>
+    <input type="number" name="tempo" value="{{ tecnico.tempo_de_trabalho_no_botafogo }}">
+  </div>
+  <div>
+    <input type="checkbox" name="ganhou" {% if tecnico.ganhou_titulos == True %} checked {%endif%}>
+    <label>Ganhou títulos?</label>
+  </div>
+  <input type="submit">
+</form>

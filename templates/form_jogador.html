@@ -1,0 +1,20 @@
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Nome</label>
+    <input type="text" name="nome" value="{{ jogador.nome }}">  
+  </div>
+  <div>
+    <label>Data de Nascimento</label>
+    <input type="date" name="data" value="{{  jogador.data_de_nascimento }}">
+  </div>
+  <div>
+    <label>Posição</label>
+    <input type="text" name="posicao" value="{{ jogador.posicao }}">
+  </div>
+  <div>
+    <input type="checkbox" name="jogou" {% if jogador.jogou_no_botafogo == True %} checked {%endif%}>
+    <label>Jogou no Botafogo?</label>
+  </div>
+  <input type="submit">
+</form>

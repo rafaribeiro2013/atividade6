@@ -1,0 +1,6 @@
+<form method="post">
+  {% csrf_token %}
+  Você tem certeza que deseja remover o técnico de id = {{ tecnico.id }}?
+  <input type="submit" name="confirm" value="Sim">
+  <input type="submit" value="Não">
+</form> 
